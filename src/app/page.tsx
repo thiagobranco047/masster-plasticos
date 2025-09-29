@@ -16,9 +16,7 @@ export default function Home() {
     statsRef,
     featuresRef,
     categoriasRef,
-    bannerRef,
-    experienciaRef,
-    newsletterRef
+    experienciaRef
   } = useScrollAnimations();
 
   return (

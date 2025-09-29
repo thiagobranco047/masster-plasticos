@@ -23,10 +23,10 @@ type AnchorProps = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement> & {
 type Props = ButtonProps | AnchorProps;
 
 // Overloads to improve JSX inference
-export default function Button(props: AnchorProps): JSX.Element;
-export default function Button(props: ButtonProps): JSX.Element;
-export default function Button(props: Props): JSX.Element {
-  const { isLoading, variant = "primary", className, children, href, ...rest } = props as any;
+export default function Button(props: AnchorProps): React.JSX.Element;
+export default function Button(props: ButtonProps): React.JSX.Element;
+export default function Button(props: Props): React.JSX.Element {
+  const { isLoading, variant = "primary", className, children, href, ...rest } = props;
 
   const classes = cn(
     "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-colors",
@@ -38,7 +38,7 @@ export default function Button(props: Props): JSX.Element {
 
   if (href) {
     return (
-      <Link href={href} className={cn(classes, className)} {...(rest as any)}>
+      <Link href={href} className={cn(classes, className)} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {children}
       </Link>
@@ -46,7 +46,7 @@ export default function Button(props: Props): JSX.Element {
   }
 
   return (
-    <button className={cn(classes, className)} {...(rest as any)}>
+    <button className={cn(classes, className)} {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}>
       {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
       {children}
     </button>

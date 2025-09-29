@@ -163,8 +163,7 @@ export function useScrollAnimations() {
 
     // Configurar scroll suave global
     gsap.config({
-      nullTargetWarn: false,
-      trialWarn: false
+      nullTargetWarn: false
     });
 
     return () => {
