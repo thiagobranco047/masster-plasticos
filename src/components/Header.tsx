@@ -36,8 +36,8 @@ export default function Header() {
           gerentecomercial@massterplasticos.com.br
           </a>
           <div className="flex items-center gap-4">
-            <span className="font-medium">WhatsApp:</span><a href="tel:+554734240746" className="font-medium hover:underline">(47) 3424-0746</a>
-            <span className="font-medium">Telefone:</span><a href="tel:+554799785-0103" className="font-medium hover:underline">(47) 99785-0103</a>
+            <span className="font-medium">Telefone:</span><a href="tel:+554734240746" className="font-medium hover:underline">(47) 3424-0746</a>
+            <span className="font-medium">WhatsApp:</span><a href="tel:+554799785-0103" className="font-medium hover:underline">(47) 99785-0103</a>
           </div>
         </div>
       </div>

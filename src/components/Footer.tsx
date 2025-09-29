@@ -79,23 +79,23 @@ export default function Footer() {
             <div className="space-y-3">
               <div>
                 <p className="text-gray-300 text-sm font-medium mb-1">Telefone</p>
-                <a href="tel:+5511999999999" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
-                  (11) 99999-9999
+                <a href="tel:+554734240746" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
+                  (47) 3424-0746
                 </a>
               </div>
               <div>
                 <p className="text-gray-300 text-sm font-medium mb-1">Televendas</p>
-                <a href="tel:+5511888888888" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
-                  (11) 88888-8888
+                <a href="tel:+554799785-0103" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
+                  (47) 99785-0103
                 </a>
               </div>
               <div>
                 <p className="text-gray-300 text-sm font-medium mb-1">Endereço</p>
                 <address className="text-gray-300 text-sm not-italic">
-                  Rua das Indústrias, 123<br />
-                  Distrito Industrial<br />
-                  São Paulo - SP<br />
-                  CEP: 01234-567
+                  Avenida das Industrias, 778<br />
+                  Porto Grande<br />
+                  Araquari - SC<br />
+                  CEP: 89.245-000
                 </address>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Masster Plásticos. Todos os direitos reservados.
         </p>
         <p>
-            Criado por <span className="text-brand-yellow font-medium">Lab. 334 Marketing</span>
+            Criado por <span className="font-medium">Lab. 334 Marketing</span>
         </p>
         </div>
       </div>
