@@ -1,0 +1,43 @@
+[
+  {
+    "nome": "Balde 12L Masster Plus",
+    "slug": "balde-12l-masster-plus",
+    "descricao": "Balde resistente com alça reforçada, ideal para uso doméstico e profissional.",
+    "imagem": "/images/produtos/balde-12l.jpg",
+    "cores": ["Amarelo", "Preto", "Cinza", "Branco"],
+    "categoria": "Masster Plus",
+    "fichaTecnica": {
+      "material": "PP",
+      "capacidade": "12L",
+      "peso": "450g"
+    },
+    "medidas": [
+      { "codigo": "12L", "altura": 280, "diametro": 290, "peso": 450 }
+    ],
+    "galeria": [
+      "/images/produtos/balde-12l-1.jpg",
+      "/images/produtos/balde-12l-2.jpg"
+    ]
+  },
+  {
+    "nome": "Lixeira 50L Decor",
+    "slug": "lixeira-50l-decor",
+    "descricao": "Design moderno, tampa basculante, diversas cores.",
+    "imagem": "/images/produtos/lixeira-50l.jpg",
+    "cores": ["Preto", "Cinza"],
+    "categoria": "Decor",
+    "fichaTecnica": {
+      "material": "PP",
+      "capacidade": "50L",
+      "peso": "1500g"
+    },
+    "medidas": [
+      { "codigo": "50L", "altura": 700, "largura": 380, "profundidade": 380, "peso": 1500 }
+    ],
+    "galeria": [
+      "/images/produtos/lixeira-50l-1.jpg",
+      "/images/produtos/lixeira-50l-2.jpg"
+    ]
+  }
+]
+

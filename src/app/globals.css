@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+  --brand-yellow: #FFD700;
+  --brand-black: #000000;
+  --brand-gray: #97999B;
+  --brand-ice: #F7F7F7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-black: var(--brand-black);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-ice: var(--brand-ice);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Utility wrappers */
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-20 md:py-28;
+}
+
+.section-title {
+  @apply text-2xl md:text-4xl font-bold tracking-tight text-black;
+}
+
+.section-subtitle {
+  @apply mt-3 text-zinc-700 leading-relaxed;
+}
+
+.prose-base {
+  @apply text-pretty text-base leading-relaxed text-gray-800;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
