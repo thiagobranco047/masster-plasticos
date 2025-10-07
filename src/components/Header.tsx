@@ -6,9 +6,10 @@ import { useState, useEffect } from "react";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/sobre", label: "Sobre" },
+  { href: "/categorias", label: "Linhas" },
   { href: "/produtos", label: "Produtos" },
   { href: "/catalogo", label: "Catálogo" },
-  { href: "/onde-encontrar", label: "Onde encontrar" },
+  // { href: "/onde-encontrar", label: "Onde encontrar" },
   { href: "/contato", label: "Contato" },
 ];
 
