@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { getProdutos, getCategorias } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function ProdutosPage() {
+function ProdutosContent() {
   const searchParams = useSearchParams();
   const categoriaFiltro = searchParams.get('categoria');
   
@@ -222,5 +222,21 @@ export default function ProdutosPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ProdutosPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white">
+        <Header />
+        <div className="container py-40 text-center">
+          <p className="text-gray-600">Carregando produtos...</p>
+        </div>
+        <Footer />
+      </div>
+    }>
+      <ProdutosContent />
+    </Suspense>
   );
 }

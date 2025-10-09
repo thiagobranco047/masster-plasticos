@@ -148,7 +148,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
             </thead>
             <tbody>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1/2"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">1/2&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603002</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023002</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153002</td>
@@ -157,7 +157,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
                 <td className="py-3 px-4 border font-bold text-gray-900">50</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">3/4"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">3/4&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603004</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023004</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153004</td>
@@ -166,7 +166,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
                 <td className="py-3 px-4 border font-bold text-gray-900">50</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">1&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603006</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023006</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153006</td>
@@ -175,7 +175,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
                 <td className="py-3 px-4 border font-bold text-gray-900">20</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1.1/4"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">1.1/4&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603008</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023008</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153008</td>
@@ -184,7 +184,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
                 <td className="py-3 px-4 border font-bold text-gray-900">20</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1.1/2"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">1.1/2&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603010</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023010</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153010</td>
@@ -193,7 +193,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
                 <td className="py-3 px-4 border font-bold text-gray-900">20</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">2"</td>
+                <td className="py-3 px-4 border font-bold text-gray-900">2&quot;</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">44603012</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">46023012</td>
                 <td className="py-3 px-4 border font-semibold text-gray-800">77153012</td>

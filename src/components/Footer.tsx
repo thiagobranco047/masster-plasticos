@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#2B2C2C' }}>
@@ -66,10 +68,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Linhas</h4>
             <ul className="space-y-2">
-              <li><a href="/produtos/masster-plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</a></li>
-              <li><a href="/produtos/eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eco</a></li>
-              <li><a href="/produtos/decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Decor</a></li>
-              <li><a href="/produtos/classe-a" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</a></li>
+              <li><Link href="/produtos?categoria=Masster Plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</Link></li>
+              <li><Link href="/produtos?categoria=Eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eco</Link></li>
+              <li><Link href="/produtos?categoria=Decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Decor</Link></li>
+              <li><Link href="/produtos?categoria=Classe A" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</Link></li>
             </ul>
           </div>
 
