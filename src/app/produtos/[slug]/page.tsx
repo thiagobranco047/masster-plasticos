@@ -2,13 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getProdutoBySlug, getProdutos } from "@/lib/data";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import ProdutoImageClient from "./ProdutoImageClient";
 
 interface ProdutoPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProdutoPageProps) {
-  const produto = getProdutoBySlug(params.slug);
+  const { slug } = await params;
+  const produto = getProdutoBySlug(slug);
   
   if (!produto) {
     return {
@@ -33,8 +34,9 @@ export async function generateMetadata({ params }: ProdutoPageProps) {
   };
 }
 
-export default function ProdutoPage({ params }: ProdutoPageProps) {
-  const produto = getProdutoBySlug(params.slug);
+export default async function ProdutoPage({ params }: ProdutoPageProps) {
+  const { slug } = await params;
+  const produto = getProdutoBySlug(slug);
 
   if (!produto) {
     notFound();
@@ -52,7 +54,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/20 text-brand-yellow mb-4">
-              {produto.categoria}
+              {produto.linha} - {produto.categoria}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {produto.nome}
@@ -85,7 +87,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
             {/* Informações do Produto */}
             <div>
               <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/10 text-brand-yellow mb-4">
-                Linha {produto.categoria}
+                {produto.linha} - {produto.categoria}
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {produto.nome}
@@ -95,36 +97,35 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
               </p>
               
               {/* Especificações */}
-                <div className="space-y-4">
+              <div className="space-y-4">
+                <div className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="font-medium text-gray-700">Material:</span>
+                  <span className="text-gray-900">{produto.material}</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="font-medium text-gray-700">Aplicação:</span>
+                  <span className="text-gray-900">{produto.aplicacao}</span>
+                </div>
+                {produto.norma && (
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-medium text-gray-700">Material:</span>
-                  <span className="text-gray-900">{produto.fichaTecnica.material}</span>
+                    <span className="font-medium text-gray-700">Norma:</span>
+                    <span className="text-gray-900">{produto.norma}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                  <span className="font-medium text-gray-700">Capacidade:</span>
-                  <span className="text-gray-900">{produto.fichaTecnica.capacidade}</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-medium text-gray-700">Peso:</span>
-                  <span className="text-gray-900">{produto.fichaTecnica.peso}</span>
-                  </div>
+                )}
                 <div className="flex justify-between py-2">
                   <span className="font-medium text-gray-700">Cores disponíveis:</span>
-                  <span className="text-gray-900">{produto.cores.join(", ")}</span>
+                  <span className="text-gray-900">{produto.cores_disponiveis.join(", ")}</span>
                 </div>
               </div>
-            </div>
-
+              </div>
+              
             {/* Foto do Produto */}
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                  src={produto.imagem}
-                  alt={produto.nome}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                />
-              </div>
+              <ProdutoImageClient 
+                src={produto.imagem}
+                alt={produto.nome}
+                nome={produto.nome}
+              />
             </div>
           </div>
         </div>
@@ -138,69 +139,26 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
             <thead className="bg-zinc-100">
               <tr>
                 <th className="py-3 px-4 border font-bold text-gray-900">Bitolas</th>
-                <th className="py-3 px-4 border font-bold text-gray-900">Preto</th>
-                <th className="py-3 px-4 border font-bold text-gray-900">Cinza</th>
-                <th className="py-3 px-4 border font-bold text-gray-900">Cinza Claro</th>
-                <th className="py-3 px-4 border font-bold text-gray-900">Branco Gelo</th>
-                <th className="py-3 px-4 border font-bold text-gray-900">Vermelho</th>
+                {produto.cores_disponiveis.map((cor) => (
+                  <th key={cor} className="py-3 px-4 border font-bold text-gray-900">{cor}</th>
+                ))}
                 <th className="py-3 px-4 border font-bold text-gray-900">Embalagem</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1/2&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603002</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023002</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153002</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053002</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953002</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">50</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">3/4&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603004</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023004</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153004</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053004</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953004</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">50</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603006</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023006</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153006</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053006</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953006</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">20</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1.1/4&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603008</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023008</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153008</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053008</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953008</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">20</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">1.1/2&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603010</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023010</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153010</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053010</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953010</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">20</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 border font-bold text-gray-900">2&quot;</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">44603012</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">46023012</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">77153012</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">47053012</td>
-                <td className="py-3 px-4 border font-semibold text-gray-800">48953012</td>
-                <td className="py-3 px-4 border font-bold text-gray-900">10</td>
-              </tr>
+              {produto.bitolas.map((bitola) => (
+                <tr key={bitola.bitola}>
+                  <td className="py-3 px-4 border font-bold text-gray-900">{bitola.bitola}</td>
+                  {produto.cores_disponiveis.map((cor) => (
+                    <td key={cor} className="py-3 px-4 border font-semibold text-gray-800">
+                      {bitola.codigo[cor] || '-'}
+                    </td>
+                  ))}
+                  <td className="py-3 px-4 border font-bold text-gray-900">
+                    {produto.embalagem[bitola.bitola] || '-'}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

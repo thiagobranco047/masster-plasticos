@@ -3,20 +3,39 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getProdutos, getCategorias } from "@/lib/data";
+import type { Produto } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 function ProdutosContent() {
   const searchParams = useSearchParams();
   const categoriaFiltro = searchParams.get('categoria');
+  const linhaFiltro = searchParams.get('linha');
   
   const [busca, setBusca] = useState("");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(categoriaFiltro || "");
+  const [linhaSelecionada, setLinhaSelecionada] = useState(linhaFiltro || "");
   
   const produtos = getProdutos();
   const categorias = getCategorias();
+
+  // Extrair linhas únicas dos produtos
+  const linhas = Array.from(new Set(produtos.map(produto => produto.linha)));
+  
+  // Extrair categorias únicas dos produtos
+  const categoriasProdutos = Array.from(new Set(produtos.map(produto => produto.categoria)));
+
+  // Atualizar estado quando os parâmetros da URL mudam
+  useEffect(() => {
+    if (categoriaFiltro) {
+      setCategoriaSelecionada(categoriaFiltro);
+    }
+    if (linhaFiltro) {
+      setLinhaSelecionada(linhaFiltro);
+    }
+  }, [categoriaFiltro, linhaFiltro]);
 
   const produtosFiltrados = useMemo(() => {
     let filtrados = produtos;
@@ -25,6 +44,13 @@ function ProdutosContent() {
     if (categoriaSelecionada) {
       filtrados = filtrados.filter(produto => 
         produto.categoria.toLowerCase() === categoriaSelecionada.toLowerCase()
+      );
+    }
+
+    // Filtro por linha
+    if (linhaSelecionada) {
+      filtrados = filtrados.filter(produto => 
+        produto.linha.toLowerCase() === linhaSelecionada.toLowerCase()
       );
     }
 
@@ -37,11 +63,12 @@ function ProdutosContent() {
     }
 
     return filtrados;
-  }, [produtos, categoriaSelecionada, busca]);
+  }, [produtos, categoriaSelecionada, linhaSelecionada, busca]);
 
   const limparFiltros = () => {
     setBusca("");
     setCategoriaSelecionada("");
+    setLinhaSelecionada("");
   };
 
   return (
@@ -69,44 +96,63 @@ function ProdutosContent() {
       {/* Filtros e Busca */}
       <section className="py-8 bg-gray-50">
         <div className="container">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
             {/* Busca */}
-            <div className="w-full lg:w-1/3">
+            <div className="lg:col-span-1">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Buscar</label>
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Buscar produtos..."
                   value={busca}
                   onChange={(e) => setBusca(e.target.value)}
-                  className="w-full px-4 py-3 pl-12 pr-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                  className="w-full px-4 py-3 pl-12 pr-4 bg-white border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow text-gray-900 placeholder-gray-500 shadow-sm"
                 />
-                <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
 
-            {/* Filtros por Linha */}
-            <div className="w-full lg:w-1/3">
+            {/* Filtro por Linha */}
+            <div className="lg:col-span-1">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Linha</label>
+              <select
+                value={linhaSelecionada}
+                onChange={(e) => setLinhaSelecionada(e.target.value)}
+                className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow text-gray-900 shadow-sm"
+              >
+                <option value="">Todas as linhas</option>
+                {linhas.map((linha) => (
+                  <option key={linha} value={linha}>
+                    {linha}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Filtro por Categoria */}
+            <div className="lg:col-span-1">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Tipo de Produto</label>
               <select
                 value={categoriaSelecionada}
                 onChange={(e) => setCategoriaSelecionada(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow text-gray-900 shadow-sm"
               >
-                <option value="">Todas as linhas</option>
-                {categorias.map((categoria) => (
-                  <option key={categoria.slug} value={categoria.nome}>
-                    {categoria.nome}
+                <option value="">Todos os tipos</option>
+                {categoriasProdutos.map((categoria) => (
+                  <option key={categoria} value={categoria}>
+                    {categoria}
                   </option>
                 ))}
               </select>
             </div>
 
             {/* Limpar Filtros */}
-            <div className="w-full lg:w-auto">
+            <div className="lg:col-span-1">
               <button
                 onClick={limparFiltros}
-                className="w-full lg:w-auto px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium"
+                className="w-full px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium border-2 border-gray-300 hover:border-gray-400 shadow-sm"
               >
                 Limpar Filtros
               </button>
@@ -115,9 +161,10 @@ function ProdutosContent() {
 
           {/* Resultados */}
           <div className="mt-6 text-center">
-            <p className="text-gray-600">
+            <p className="text-gray-700 font-medium">
               {produtosFiltrados.length} produto{produtosFiltrados.length !== 1 ? 's' : ''} encontrado{produtosFiltrados.length !== 1 ? 's' : ''}
-              {categoriaSelecionada && ` na linha ${categoriaSelecionada}`}
+              {categoriaSelecionada && ` do tipo ${categoriaSelecionada}`}
+              {linhaSelecionada && ` da linha ${linhaSelecionada}`}
             </p>
           </div>
         </div>
@@ -128,7 +175,7 @@ function ProdutosContent() {
         <div className="container">
           {produtosFiltrados.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {produtosFiltrados.map((produto) => (
+              {produtosFiltrados.map((produto: Produto) => (
                 <Link
                   key={produto.slug}
                   href={`/produtos/${produto.slug}`}
@@ -142,11 +189,11 @@ function ProdutosContent() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-yellow/90 text-black">
-                        {produto.categoria}
-                      </span>
-                    </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-yellow/90 text-black">
+                      {produto.linha} - {produto.categoria}
+                    </span>
+                  </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-yellow transition-colors">
@@ -163,7 +210,7 @@ function ProdutosContent() {
                         </svg>
                       </div>
                       <div className="text-xs text-gray-500">
-                        {produto.cores.length} cor{produto.cores.length !== 1 ? 'es' : ''}
+                        {produto.cores_disponiveis.length} cor{produto.cores_disponiveis.length !== 1 ? 'es' : ''}
                       </div>
                     </div>
                   </div>

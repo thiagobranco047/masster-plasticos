@@ -9,6 +9,7 @@ import Stats from "@/components/Stats";
 import CategoriasDestaque from "@/components/CategoriasDestaque";
 import Experiencia from "@/components/Experiencia";
 import { useScrollAnimations } from "@/hooks/useScrollAnimations";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 export default function Home() {
   const {
@@ -20,7 +21,7 @@ export default function Home() {
   } = useScrollAnimations();
 
   return (
-    <>
+    <ErrorBoundary>
       <Header />
       <section ref={heroRef}>
         <Hero />
@@ -44,6 +45,6 @@ export default function Home() {
         <Newsletter />
       </section>
       <Footer />
-    </>
+    </ErrorBoundary>
   );
 }

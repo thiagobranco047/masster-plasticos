@@ -2,15 +2,50 @@
 
 import { getCategorias } from "@/lib/data";
 import Button from "@/components/Button";
-import { useState } from "react";
+import CategoriasDestaqueFallback from "./CategoriasDestaqueFallback";
+import { useState, useEffect } from "react";
+import type { Categoria } from "@/lib/types";
 
 export default function CategoriasDestaque() {
-  const categorias = getCategorias();
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    try {
+      const categoriasData = getCategorias();
+      if (categoriasData && categoriasData.length > 0) {
+        setCategorias(categoriasData);
+      } else {
+        console.warn('Nenhuma categoria encontrada, usando fallback');
+      }
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Erro ao carregar categorias:', error);
+      setIsLoading(false);
+    }
+  }, []);
   
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     e.currentTarget.src = "/images/home/destaque.png";
   };
+
+  if (isLoading) {
+    return (
+      <section className="w-full section bg-white">
+        <div className="container">
+          <div className="text-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-yellow mx-auto"></div>
+            <p className="mt-4 text-gray-600">Carregando linhas...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!categorias || categorias.length === 0) {
+    return <CategoriasDestaqueFallback />;
+  }
   return (
     <section className="w-full section bg-white">
       <div className="container">
@@ -70,13 +105,13 @@ export default function CategoriasDestaque() {
             
             <div className="relative h-[500px] bg-gray-50 rounded-lg overflow-hidden">
               <img 
-                src={`/images/categorias/${categorias[categoriaSelecionada].slug}.png`} 
+                src={`/images/categorias/${categorias[categoriaSelecionada].slug === 'masster-eco' ? 'eco' : categorias[categoriaSelecionada].slug}.png`} 
                 alt={categorias[categoriaSelecionada].nome} 
                 className="h-full w-full object-contain transition-all duration-500 ease-in-out"
                 onError={handleImageError}
               />
               <div className="absolute bottom-4 right-4">
-                <Button href={`/produtos/${categorias[categoriaSelecionada].slug}`}>
+                <Button href={`/produtos?linha=${encodeURIComponent(categorias[categoriaSelecionada].nome)}`}>
                   Ver produtos
                 </Button>
               </div>

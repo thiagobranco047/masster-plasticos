@@ -68,10 +68,16 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Linhas</h4>
             <ul className="space-y-2">
-              <li><Link href="/produtos?categoria=Masster Plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</Link></li>
-              <li><Link href="/produtos?categoria=Eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eco</Link></li>
-              <li><Link href="/produtos?categoria=Decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Decor</Link></li>
-              <li><Link href="/produtos?categoria=Classe A" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</Link></li>
+              <li><Link href="/produtos?categoria=Acessórios" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Acessórios</Link></li>
+              <li><Link href="/produtos?categoria=Condução" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Condução</Link></li>
+              <li><Link href="/produtos?categoria=Caixas e Conduletes" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Caixas e Conduletes</Link></li>
+              <li><Link href="/produtos?categoria=Eletrodutos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eletrodutos</Link></li>
+              <li><Link href="/produtos?categoria=Plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Plus</Link></li>
+              <li><Link href="/produtos?categoria=Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Modular</Link></li>
+              <li><Link href="/produtos?categoria=Tampões" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampões</Link></li>
+              <li><Link href="/produtos?categoria=Tampas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampas</Link></li>
+              <li><Link href="/produtos?categoria=Masster Decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Decor</Link></li>
+              <li><Link href="/produtos?categoria=Linha Masster Eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Masster Eco</Link></li>
             </ul>
           </div>
 

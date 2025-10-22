@@ -4,21 +4,16 @@ export const categorias: Categoria[] = [
   { 
     nome: "Masster Plus", 
     slug: "masster-plus",
-    descricao: "Linha premium com alta resistência e acabamento superior para instalações profissionais de grande porte."
+    descricao: "Linha premium com alta resistência e acabamento superior para instalações profissionais."
   },
   { 
-    nome: "Eco", 
-    slug: "eco",
-    descricao: "Solução sustentável que combina qualidade e responsabilidade ambiental para projetos conscientes."
-  },
-  { 
-    nome: "Decor", 
-    slug: "decor",
-    descricao: "Design moderno e elegante que une funcionalidade e estética para ambientes residenciais."
+    nome: "Masster Eco", 
+    slug: "masster-eco",
+    descricao: "Linha sustentável com PVC reciclado para instalações eco-friendly."
   },
   { 
     nome: "Classe A", 
     slug: "classe-a",
-    descricao: "Padrão de excelência com certificações internacionais para obras de alta qualidade."
+    descricao: "Linha premium Classe A com acabamento superior e alta qualidade para instalações profissionais."
   }
 ];

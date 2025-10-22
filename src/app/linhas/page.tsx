@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Linhas de Produtos",
-  description: "Conheça nossas principais linhas de produtos: Masster Plus, Eco, Decor e Classe A.",
+  title: "Nossas Linhas",
+  description: "Conheça nossas principais linhas de produtos: Masster Plus, Masster Decor, Masster Eco e Classe A.",
 };
 
 export default function CategoriasPage() {
@@ -27,7 +27,7 @@ export default function CategoriasPage() {
               Nossas <span className="text-brand-yellow">Linhas</span>
             </h1>
             <p className="text-xl text-white leading-relaxed">
-              Conheça nossas principais categorias de produtos plásticos, desenvolvidas 
+              Conheça nossas principais linhas de produtos plásticos, desenvolvidas 
               com tecnologia de ponta e materiais de alta qualidade.
             </p>
           </div>
@@ -46,12 +46,12 @@ export default function CategoriasPage() {
             {categorias.map((categoria) => (
               <Link 
                 key={categoria.slug} 
-                href={`/produtos?categoria=${encodeURIComponent(categoria.nome)}`}
+                href={`/produtos?linha=${encodeURIComponent(categoria.slug === 'masster-plus' ? 'Plus' : categoria.slug === 'masster-eco' ? 'Eco' : categoria.slug === 'classe-a' ? 'Classe A' : categoria.nome)}`}
                 className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100">
                   <Image
-                    src={`/images/categorias/${categoria.slug}.png`}
+                    src={`/images/categorias/${categoria.slug === 'masster-eco' ? 'eco' : categoria.slug === 'masster-plus' ? 'masster-plus' : categoria.slug}.png`}
                     alt={categoria.nome}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

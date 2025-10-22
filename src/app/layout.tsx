@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   },
   description:
     "Soluções em plásticos: qualidade, durabilidade e inovação para o seu dia a dia.",
+  // Favicon temporariamente desabilitado para resolver erro 500
+  // icons: {
+  //   icon: '/favicon.ico',
+  // },
   openGraph: {
     title: "Masster Plásticos",
     description:
