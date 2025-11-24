@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getProdutos, getCategorias } from "@/lib/data";
+import { getProdutos } from "@/lib/data";
 import type { Produto } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,7 +19,6 @@ function ProdutosContent() {
   const [linhaSelecionada, setLinhaSelecionada] = useState(linhaFiltro || "");
   
   const produtos = getProdutos();
-  const categorias = getCategorias();
 
   // Extrair linhas únicas dos produtos
   const linhas = Array.from(new Set(produtos.map(produto => produto.linha)));

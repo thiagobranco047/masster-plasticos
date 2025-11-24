@@ -15,5 +15,10 @@ export const categorias: Categoria[] = [
     nome: "Classe A", 
     slug: "classe-a",
     descricao: "Linha premium Classe A com acabamento superior e alta qualidade para instalações profissionais."
+  },
+  {
+    nome: "Masster Decor",
+    slug: "masster-decor",
+    descricao: "Linha Masster Decor com eletrodutos e acessórios coloridos para instalações aparentes e projetos autorais."
   }
 ];

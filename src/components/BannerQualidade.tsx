@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Button from "@/components/Button";
 
 export default function BannerQualidade() {
   return (
@@ -13,12 +15,15 @@ export default function BannerQualidade() {
         </div>
       </div>
       
-      <section className="relative section -mt-0">
+      <section className="relative section -mt-0 min-h-[600px]">
         <div className="absolute inset-0 -z-10">
-          <img 
+          <Image 
             src="/images/home/bg-desmonte.png" 
             alt="Background" 
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
           <div className="absolute inset-0" />
         </div>
@@ -31,7 +36,7 @@ export default function BannerQualidade() {
                 e confiança para qualquer<br />
                 tipo de projeto
               </h3>
-              <div className="bg-white rounded-xl p-20 shadow-sm mt-6">
+              <div className="bg-white rounded-xl p-10 md:p-16 shadow-sm mt-6 space-y-6">
                 <div className="border-t-2 border-brand-yellow mb-4"></div>
                 <p className="text-[#475467] text-[15px] leading-[28px]">
                   Desde 1999, a Masster Plásticos tem como norte uma política de alta qualidade dos seus produtos* e serviços. Possuindo compromisso com a agilidade na entrega e uma equipe de atendimento qualificada para superar expectativas.
@@ -41,12 +46,23 @@ export default function BannerQualidade() {
                   <span className="text-sm">*Recomendação de uso dos produtos Masster:<br />
                   Instalações abrigadas.</span>
                 </p>
-                <div className="border-t-2 border-brand-yellow mt-4"></div>
+                <div className="border-t-2 border-brand-yellow"></div>
+                <div className="pt-2">
+                  <Button href="/sobre" className="w-full md:w-auto">
+                    Conheça a Masster
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
           <div className="relative h-[720px] overflow-hidden flex justify-end">
-            <img src="/images/home/circuito-selo.png" alt="Destaque" className="h-full object-contain" />
+            <Image 
+              src="/images/home/circuito-selo.png" 
+              alt="Destaque" 
+              width={600}
+              height={720}
+              className="h-full w-auto object-contain"
+            />
           </div>
         </div>
       </section>

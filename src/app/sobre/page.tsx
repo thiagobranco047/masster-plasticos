@@ -88,7 +88,7 @@ export default function SobrePage() {
             <p className="text-xl text-gray-600">Os valores que guiam nossa empresa</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Missão */}
             <div className="text-center">
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -99,9 +99,22 @@ export default function SobrePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Missão</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Desenvolver e comercializar soluções plásticas inovadoras que atendam 
-                  às necessidades de nossos clientes, sempre com foco na qualidade, 
-                  sustentabilidade e excelência no atendimento.
+                  Facilitar a vida das pessoas, entregando segurança, estilo e praticidade.
+                </p>
+              </div>
+            </div>
+
+            {/* Propósito */}
+            <div className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <div className="w-16 h-16 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 0V3m0 18v-5m9-4h-5m-8 0H3" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Propósito</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Deixar um legado ético e responsável, cuidando de pessoas e transformando vidas.
                 </p>
               </div>
             </div>
@@ -117,9 +130,7 @@ export default function SobrePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Visão</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Ser reconhecida como a empresa líder em soluções plásticas no Brasil, 
-                  referência em inovação, qualidade e sustentabilidade, contribuindo 
-                  para um futuro mais sustentável.
+                  Consolidar no mercado brasileiro a evidente qualidade dos nossos produtos e serviços.
                 </p>
               </div>
             </div>
@@ -134,8 +145,7 @@ export default function SobrePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Valores</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Qualidade, inovação, sustentabilidade, ética, respeito ao meio ambiente, 
-                  compromisso com clientes e colaboradores, e busca constante pela excelência.
+                  Pessoas, ética, sustentabilidade, confiança e respeito.
                 </p>
               </div>
             </div>

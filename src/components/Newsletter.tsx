@@ -8,9 +8,28 @@ export default function Newsletter() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Placeholder integration
-    await new Promise((r) => setTimeout(r, 500));
-    setSent(true);
+    
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erro ao realizar inscrição");
+      }
+
+      setSent(true);
+      setEmail("");
+    } catch (err) {
+      console.error("Erro ao inscrever na newsletter:", err);
+      alert(err instanceof Error ? err.message : "Erro ao realizar inscrição. Tente novamente.");
+    }
   }
 
   return (

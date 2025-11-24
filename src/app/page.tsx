@@ -8,6 +8,7 @@ import Newsletter from "@/components/Newsletter";
 import Stats from "@/components/Stats";
 import CategoriasDestaque from "@/components/CategoriasDestaque";
 import Experiencia from "@/components/Experiencia";
+import MassterDecorSection from "@/components/MassterDecorSection";
 import { useScrollAnimations } from "@/hooks/useScrollAnimations";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
@@ -41,6 +42,7 @@ export default function Home() {
       <section ref={experienciaRef}>
         <Experiencia />
       </section>
+      <MassterDecorSection />
       <section>
         <Newsletter />
       </section>

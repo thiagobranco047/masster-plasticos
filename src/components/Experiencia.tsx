@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/Button";
 
 export default function Experiencia() {
@@ -21,9 +22,11 @@ export default function Experiencia() {
             <div className="relative h-[500px] rounded-lg overflow-visible">
               <div className="absolute inset-0 bg-[url('/images/home/bg-branco-gelo.png')] bg-cover bg-center rounded-lg"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/images/home/circuito-branco-gelo.png" 
                   alt="Produto em destaque" 
+                  width={400}
+                  height={384}
                   className="h-96 w-auto object-contain relative z-10 -mb-[250px]"
                 />
               </div>
@@ -77,9 +80,11 @@ export default function Experiencia() {
             <div className="relative h-[500px] rounded-lg overflow-visible">
               <div className="absolute inset-0 bg-[url('/images/home/bg-preto.png')] bg-cover bg-center rounded-lg"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <img 
+                <Image 
                   src="/images/home/circuito-preto.png" 
                   alt="Produto em destaque" 
+                  width={400}
+                  height={384}
                   className="h-96 w-auto object-contain relative z-10 -mb-[250px]"
                 />
               </div>

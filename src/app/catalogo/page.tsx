@@ -30,11 +30,29 @@ export default function CatalogoPage() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simular envio do formulário
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitted(true);
-    setIsLoading(false);
+    try {
+      const response = await fetch("/api/catalogo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erro ao processar solicitação");
+      }
+
+      setIsSubmitted(true);
+      downloadPDF();
+    } catch (err) {
+      console.error("Erro ao solicitar catálogo:", err);
+      alert(err instanceof Error ? err.message : "Erro ao processar solicitação. Tente novamente.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const downloadPDF = () => {

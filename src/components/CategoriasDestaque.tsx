@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { getCategorias } from "@/lib/data";
 import Button from "@/components/Button";
 import CategoriasDestaqueFallback from "./CategoriasDestaqueFallback";
@@ -26,8 +27,12 @@ export default function CategoriasDestaque() {
     }
   }, []);
   
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.src = "/images/home/destaque.png";
+  const getImageSrc = (slug: string) => {
+    if (slug === 'masster-decor') {
+      return '/images/masster-decor/conjunto.webp';
+    }
+    const imageSlug = slug === 'masster-eco' ? 'eco' : slug;
+    return `/images/categorias/${imageSlug}.png`;
   };
 
   if (isLoading) {
@@ -104,14 +109,19 @@ export default function CategoriasDestaque() {
             </div>
             
             <div className="relative h-[500px] bg-gray-50 rounded-lg overflow-hidden">
-              <img 
-                src={`/images/categorias/${categorias[categoriaSelecionada].slug === 'masster-eco' ? 'eco' : categorias[categoriaSelecionada].slug}.png`} 
+              <Image 
+                src={getImageSrc(categorias[categoriaSelecionada].slug)}
                 alt={categorias[categoriaSelecionada].nome} 
-                className="h-full w-full object-contain transition-all duration-500 ease-in-out"
-                onError={handleImageError}
+                fill
+                className="object-contain transition-all duration-500 ease-in-out"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute bottom-4 right-4">
-                <Button href={`/produtos?linha=${encodeURIComponent(categorias[categoriaSelecionada].nome)}`}>
+                <Button href={
+                  categorias[categoriaSelecionada].slug === 'masster-decor'
+                    ? '/masster-decor'
+                    : `/produtos?linha=${encodeURIComponent(categorias[categoriaSelecionada].nome)}`
+                }>
                   Ver produtos
                 </Button>
               </div>

@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="border-t border-white/10 w-full"></div>
       {/* Main footer content */}
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col gap-10 lg:flex-row">
           {/* Logo + Descrição + Redes Sociais */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:w-1/4 xl:w-2/5 lg:pr-12 xl:pr-16">
             <div>
               <h3 className="text-xl font-bold text-white mb-3">Masster Plásticos</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -46,65 +46,74 @@ export default function Footer() {
                 <a href="https://g.page/r/CQkaN-xu81wREAI/review" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm font-medium">
                   Avalie no Google
                 </a>
-              </div>
+          </div>
             </div>
           </div>
 
-          {/* Páginas */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Páginas</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Início</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Sobre Nós</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Produtos</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Catálogo</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Representantes</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Qualidade</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Contato</a></li>
-            </ul>
-          </div>
+          <div className="grid flex-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {/* Páginas */}
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-4">Páginas</h4>
+              <ul className="space-y-2">
+                <li><Link href="/" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Home</Link></li>
+                <li><Link href="/sobre" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Sobre</Link></li>
+                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linhas</Link></li>
+                <li><Link href="/produtos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Produtos</Link></li>
+                <li><Link href="/catalogo" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Catálogo</Link></li>
+                <li><Link href="/contato" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Contato</Link></li>
+              </ul>
+            </div>
 
-          {/* Linhas */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Linhas</h4>
-            <ul className="space-y-2">
-              <li><Link href="/produtos?categoria=Acessórios" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Acessórios</Link></li>
-              <li><Link href="/produtos?categoria=Condução" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Condução</Link></li>
-              <li><Link href="/produtos?categoria=Caixas e Conduletes" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Caixas e Conduletes</Link></li>
-              <li><Link href="/produtos?categoria=Eletrodutos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eletrodutos</Link></li>
-              <li><Link href="/produtos?categoria=Plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Plus</Link></li>
-              <li><Link href="/produtos?categoria=Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Modular</Link></li>
-              <li><Link href="/produtos?categoria=Tampões" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampões</Link></li>
-              <li><Link href="/produtos?categoria=Tampas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampas</Link></li>
-              <li><Link href="/produtos?categoria=Masster Decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Decor</Link></li>
-              <li><Link href="/produtos?categoria=Linha Masster Eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Masster Eco</Link></li>
-            </ul>
-          </div>
+            {/* Linhas */}
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-4">Linhas</h4>
+              <ul className="space-y-2">
+                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</Link></li>
+                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Eco</Link></li>
+                <li><Link href="/masster-decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Decor</Link></li>
+                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</Link></li>
+              </ul>
+            </div>
 
-          {/* Contato */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Contato</h4>
-            <div className="space-y-3">
-              <div>
-                <p className="text-gray-300 text-sm font-medium mb-1">Telefone</p>
-                <a href="tel:+554734240746" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
-                  (47) 3424-0746
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300 text-sm font-medium mb-1">Televendas</p>
-                <a href="tel:+554799785-0103" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
-                  (47) 99785-0103
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300 text-sm font-medium mb-1">Endereço</p>
-                <address className="text-gray-300 text-sm not-italic">
-                  Avenida das Industrias, 778<br />
-                  Porto Grande<br />
-                  Araquari - SC<br />
-                  CEP: 89.245-000
-                </address>
+            {/* Produtos */}
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-4">Produtos</h4>
+              <ul className="space-y-2">
+                <li><Link href="/produtos?categoria=Acessórios" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Acessórios</Link></li>
+                <li><Link href="/produtos?categoria=Condução" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Condução</Link></li>
+                <li><Link href="/produtos?categoria=Caixas e Conduletes" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Caixas e Conduletes</Link></li>
+                <li><Link href="/produtos?categoria=Eletrodutos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eletrodutos</Link></li>
+                <li><Link href="/produtos?categoria=Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Modular</Link></li>
+                <li><Link href="/produtos?categoria=Tampões" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampões</Link></li>
+                <li><Link href="/produtos?categoria=Tampas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampas</Link></li>
+              </ul>
+            </div>
+
+            {/* Contato */}
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-4">Contato</h4>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-gray-300 text-sm font-medium mb-1">Telefone</p>
+                  <a href="tel:+554734240746" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
+                    (47) 3424-0746
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm font-medium mb-1">Televendas</p>
+                  <a href="tel:+5547997850103" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">
+                    (47) 99785-0103
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm font-medium mb-1">Endereço</p>
+                  <address className="text-gray-300 text-sm not-italic">
+                    Avenida das Industrias, 778<br />
+                    Porto Grande<br />
+                    Araquari - SC<br />
+                    CEP: 89.245-000
+                  </address>
+                </div>
               </div>
             </div>
           </div>
@@ -117,12 +126,12 @@ export default function Footer() {
       {/* Copyright section */}
       <div className="container py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-300">
-        <p>
-          © {new Date().getFullYear()} Masster Plásticos. Todos os direitos reservados.
-        </p>
-        <p>
+          <p>
+            © {new Date().getFullYear()} Masster Plásticos. Todos os direitos reservados.
+          </p>
+          <p>
             Criado por <span className="font-medium">Lab. 334 Marketing</span>
-        </p>
+          </p>
         </div>
       </div>
     </footer>
