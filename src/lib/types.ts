@@ -22,6 +22,17 @@ export type Embalagem = {
   [bitola: string]: number;
 };
 
+export type Variante = {
+  entradas?: number;
+  tamanho?: string;
+  dimensoes?: string;
+  compatibilidade?: string | string[];
+  bitola?: string;
+  reduz_para?: string[];
+  codigo: Record<string, string>;
+  embalagem: number;
+};
+
 export type Produto = {
   id: string;
   nome: string;
@@ -31,12 +42,13 @@ export type Produto = {
   descricao: string;
   aplicacao: string;
   cores_disponiveis: string[];
-  bitolas: Bitola[];
-  embalagem: Embalagem;
+  bitolas?: Bitola[];
+  embalagem?: Embalagem;
   norma?: string;
   material: string;
   imagem: string;
   pdf_ficha_tecnica?: string;
+  variantes?: Variante[];
   // Campos legados para compatibilidade
   cores?: string[];
   fichaTecnica?: Record<string, string>;

@@ -42,6 +42,14 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
     notFound();
   }
 
+  // Verificar quais campos existem nas variantes para renderizar a tabela dinamicamente
+  const hasEntradas = produto.variantes?.some(v => v.entradas !== undefined);
+  const hasTamanho = produto.variantes?.some(v => v.tamanho !== undefined);
+  const hasDimensoes = produto.variantes?.some(v => v.dimensoes !== undefined);
+  const hasCompatibilidade = produto.variantes?.some(v => v.compatibilidade !== undefined);
+  const hasBitola = produto.variantes?.some(v => v.bitola !== undefined);
+  const hasReduzPara = produto.variantes?.some(v => v.reduz_para !== undefined);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -132,37 +140,112 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
       </section>
 
       {/* Tabela de Códigos */}
-      <section className="px-4 md:px-10 lg:px-24 pb-12 overflow-x-auto">
-        <div className="container">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Códigos e Especificações</h3>
-          <table className="w-full border text-sm">
-            <thead className="bg-zinc-100">
-              <tr>
-                <th className="py-3 px-4 border font-bold text-gray-900">Bitolas</th>
-                {produto.cores_disponiveis.map((cor) => (
-                  <th key={cor} className="py-3 px-4 border font-bold text-gray-900">{cor}</th>
-                ))}
-                <th className="py-3 px-4 border font-bold text-gray-900">Embalagem</th>
-              </tr>
-            </thead>
-            <tbody>
-              {produto.bitolas.map((bitola) => (
-                <tr key={bitola.bitola}>
-                  <td className="py-3 px-4 border font-bold text-gray-900">{bitola.bitola}</td>
+      {produto.bitolas && produto.embalagem && (
+        <section className="px-4 md:px-10 lg:px-24 pb-12 overflow-x-auto">
+          <div className="container">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Códigos e Especificações</h3>
+            <table className="w-full border text-sm">
+              <thead className="bg-zinc-100">
+                <tr>
+                  <th className="py-3 px-4 border font-bold text-gray-900">Bitolas</th>
                   {produto.cores_disponiveis.map((cor) => (
-                    <td key={cor} className="py-3 px-4 border font-semibold text-gray-800">
-                      {bitola.codigo[cor] || '-'}
-                    </td>
+                    <th key={cor} className="py-3 px-4 border font-bold text-gray-900">{cor}</th>
                   ))}
-                  <td className="py-3 px-4 border font-bold text-gray-900">
-                    {produto.embalagem[bitola.bitola] || '-'}
-                  </td>
+                  <th className="py-3 px-4 border font-bold text-gray-900">Embalagem</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+              </thead>
+              <tbody>
+                {produto.bitolas.map((bitola) => (
+                  <tr key={bitola.bitola}>
+                    <td className="py-3 px-4 border font-bold text-gray-900">{bitola.bitola}</td>
+                    {produto.cores_disponiveis.map((cor) => (
+                      <td key={cor} className="py-3 px-4 border font-semibold text-gray-800">
+                        {bitola.codigo[cor] || '-'}
+                      </td>
+                    ))}
+                    <td className="py-3 px-4 border font-bold text-gray-900">
+                      {produto.embalagem?.[bitola.bitola] || '-'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+      
+      {/* Tabela de Variantes */}
+      {produto.variantes && (
+        <section className="px-4 md:px-10 lg:px-24 pb-12 overflow-x-auto">
+          <div className="container">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Códigos e Especificações</h3>
+            <table className="w-full border text-sm">
+              <thead className="bg-zinc-100">
+                <tr>
+                  {hasBitola && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Bitola</th>
+                  )}
+                  {hasEntradas && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Entradas</th>
+                  )}
+                  {hasTamanho && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Tamanho</th>
+                  )}
+                  {hasDimensoes && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Dimensões</th>
+                  )}
+                  {hasCompatibilidade && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Compatibilidade</th>
+                  )}
+                  {hasReduzPara && (
+                    <th className="py-3 px-4 border font-bold text-gray-900">Reduz Para</th>
+                  )}
+                  {produto.cores_disponiveis.map((cor) => (
+                    <th key={cor} className="py-3 px-4 border font-bold text-gray-900">{cor}</th>
+                  ))}
+                  <th className="py-3 px-4 border font-bold text-gray-900">Embalagem</th>
+                </tr>
+              </thead>
+              <tbody>
+                {produto.variantes.map((variante, index) => (
+                  <tr key={index}>
+                    {hasBitola && (
+                      <td className="py-3 px-4 border font-bold text-gray-900">{variante.bitola || '-'}</td>
+                    )}
+                    {hasEntradas && (
+                      <td className="py-3 px-4 border font-bold text-gray-900">{variante.entradas || '-'}</td>
+                    )}
+                    {hasTamanho && (
+                      <td className="py-3 px-4 border font-bold text-gray-900">{variante.tamanho || '-'}</td>
+                    )}
+                    {hasDimensoes && (
+                      <td className="py-3 px-4 border font-semibold text-gray-800">{variante.dimensoes || '-'}</td>
+                    )}
+                    {hasCompatibilidade && (
+                      <td className="py-3 px-4 border font-semibold text-gray-800">
+                        {Array.isArray(variante.compatibilidade) 
+                          ? variante.compatibilidade.join(", ")
+                          : variante.compatibilidade || '-'}
+                      </td>
+                    )}
+                    {hasReduzPara && (
+                      <td className="py-3 px-4 border font-semibold text-gray-800">
+                        {variante.reduz_para?.join(", ") || '-'}
+                      </td>
+                    )}
+                    {produto.cores_disponiveis.map((cor) => (
+                      <td key={cor} className="py-3 px-4 border font-semibold text-gray-800">
+                        {variante.codigo[cor] || '-'}
+                      </td>
+                    ))}
+                    <td className="py-3 px-4 border font-bold text-gray-900">{variante.embalagem}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 bg-brand-yellow">
