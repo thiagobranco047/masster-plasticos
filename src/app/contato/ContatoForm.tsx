@@ -110,7 +110,7 @@ export default function ContatoForm() {
             required
             value={formData.nome}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 placeholder:text-gray-500"
             placeholder="Seu nome completo"
           />
         </div>
@@ -124,7 +124,7 @@ export default function ContatoForm() {
             name="empresa"
             value={formData.empresa}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 placeholder:text-gray-500"
             placeholder="Nome da sua empresa"
           />
         </div>
@@ -142,7 +142,7 @@ export default function ContatoForm() {
             required
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 placeholder:text-gray-500"
             placeholder="seu@email.com"
           />
         </div>
@@ -157,7 +157,7 @@ export default function ContatoForm() {
             required
             value={formData.telefone}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 placeholder:text-gray-500"
             placeholder="(47) 99999-9999"
           />
         </div>
@@ -173,7 +173,7 @@ export default function ContatoForm() {
           required
           value={formData.assunto}
           onChange={handleInputChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900"
         >
           <option value="">Selecione um assunto</option>
           <option value="orcamento">Solicitar Orçamento</option>
@@ -195,7 +195,7 @@ export default function ContatoForm() {
           required
           value={formData.mensagem}
           onChange={handleInputChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 placeholder:text-gray-500"
           placeholder="Descreva sua necessidade ou dúvida..."
         ></textarea>
       </div>

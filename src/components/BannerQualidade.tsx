@@ -48,7 +48,7 @@ export default function BannerQualidade() {
                 </p>
                 <div className="border-t-2 border-brand-yellow"></div>
                 <div className="pt-2">
-                  <Button href="/sobre" className="w-full md:w-auto">
+                  <Button href="/sobre-a-empresa" className="w-full md:w-auto">
                     Conheça a Masster
                   </Button>
                 </div>

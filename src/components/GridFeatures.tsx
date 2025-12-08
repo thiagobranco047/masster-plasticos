@@ -5,8 +5,8 @@ type Feature = {
 
 const features: Feature[] = [
   { title: "Muito mais prático", desc: "Design pensado para instalação rápida e eficiente." },
-  { title: "Alta fidelidade", desc: "Matéria-prima de alta qualidade com controle rigoroso." },
-  { title: "Resistente ao impacto", desc: "Durabilidade superior para diferentes ambientes." },
+  { title: "Alta fidelidade de cor", desc: "Matéria-prima de alta qualidade com controle rigoroso." },
+  { title: "Resistente ao envelhecimento", desc: "Durabilidade superior para diferentes ambientes." },
   { title: "Excelente acabamento", desc: "Padrão de qualidade com ótimo acabamento e encaixes." },
 ];
 

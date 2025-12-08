@@ -72,3 +72,25 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFD700 !important;
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #FFD700 !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}

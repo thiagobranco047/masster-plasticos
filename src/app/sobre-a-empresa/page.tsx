@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export const metadata = {
   title: "Sobre a Empresa",
@@ -58,24 +59,40 @@ export default function SobrePage() {
               <div className="bg-gradient-to-br from-brand-yellow/10 to-brand-yellow/5 rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-brand-yellow mb-2">20+</div>
+                    <div className="text-3xl font-bold text-brand-yellow mb-2">+ de 20</div>
                     <div className="text-sm text-gray-600">Anos de Experiência</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-brand-yellow mb-2">500+</div>
+                    <div className="text-3xl font-bold text-brand-yellow mb-2">+ de 1000</div>
                     <div className="text-sm text-gray-600">Produtos Desenvolvidos</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-brand-yellow mb-2">1000+</div>
+                    <div className="text-3xl font-bold text-brand-yellow mb-2">+ de 4000</div>
                     <div className="text-sm text-gray-600">Clientes Satisfeitos</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-brand-yellow mb-2">15+</div>
+                    <div className="text-3xl font-bold text-brand-yellow mb-2">+ de 20</div>
                     <div className="text-sm text-gray-600">Estados Atendidos</div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Foto da Fachada */}
+      <section className="py-16">
+        <div className="container">
+          <div className="w-full">
+            <Image
+              src="/images/fachada-masster.webp"
+              alt="Fachada da Masster Plásticos"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-lg object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -213,17 +230,16 @@ export default function SobrePage() {
             <p className="text-xl text-gray-600">Reconhecimento da excelência dos nossos processos</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
               <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-10 h-10 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">ISO 9001:2015</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">ABNT NBR ISO/IEC 17025</h3>
               <p className="text-gray-600">
-                Sistema de Gestão da Qualidade certificado, garantindo processos 
-                padronizados e melhoria contínua.
+                Estabelece os requisitos para a competência de laboratórios de ensaio e calibração.
               </p>
             </div>
 
@@ -233,23 +249,9 @@ export default function SobrePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">ISO 14001:2015</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">ABNT NBR 15465:2020</h3>
               <p className="text-gray-600">
-                Gestão Ambiental certificada, demonstrando nosso compromisso com 
-                práticas sustentáveis e responsabilidade ambiental.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
-              <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Certificação INMETRO</h3>
-              <p className="text-gray-600">
-                Produtos certificados pelo Instituto Nacional de Metrologia, 
-                Qualidade e Tecnologia, garantindo conformidade com padrões nacionais.
+                Sistemas de eletrodutos plásticos para instalações de baixa tensão. Requisitos de desempenho.
               </p>
             </div>
           </div>
