@@ -14,7 +14,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 
 export default function Home() {
   const {
-    heroRef,
+    heroRef, 
     statsRef,
     featuresRef,
     categoriasRef,
