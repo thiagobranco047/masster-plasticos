@@ -122,7 +122,7 @@ export default function CatalogoPage() {
                         required
                         value={formData.nome}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                         placeholder="Seu nome completo"
                       />
                     </div>
@@ -137,7 +137,7 @@ export default function CatalogoPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                         placeholder="seu@email.com"
                       />
                     </div>
@@ -155,7 +155,7 @@ export default function CatalogoPage() {
                         required
                         value={formData.empresa}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                         placeholder="Nome da sua empresa"
                       />
                     </div>
@@ -170,7 +170,7 @@ export default function CatalogoPage() {
                         required
                         value={formData.telefone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                         placeholder="(47) 99999-9999"
                       />
                     </div>
@@ -187,7 +187,7 @@ export default function CatalogoPage() {
                         name="cargo"
                         value={formData.cargo}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                         placeholder="Seu cargo na empresa"
                       />
                     </div>
@@ -200,7 +200,7 @@ export default function CatalogoPage() {
                         name="interesse"
                         value={formData.interesse}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent text-gray-900 bg-white"
                       >
                         <option value="">Selecione uma área</option>
                         <option value="masster-plus">Masster Plus</option>

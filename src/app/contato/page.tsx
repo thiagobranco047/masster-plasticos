@@ -129,8 +129,8 @@ export default function ContatoPage() {
                     </div>
                     <div>
                       <div className="space-y-1 text-gray-600">
-                        <p><span className="font-medium">Segunda a Sexta:</span> 8h às 18h</p>
-                        <p><span className="font-medium">Sábado:</span> 8h às 12h</p>
+                        <p><span className="font-medium">Segunda a Sexta:</span> 7h12 às 17h</p>
+                        <p><span className="font-medium">Sábado:</span> Fechado</p>
                         <p><span className="font-medium">Domingo:</span> Fechado</p>
                       </div>
                     </div>
@@ -179,12 +179,12 @@ export default function ContatoPage() {
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Qual o prazo de entrega dos produtos?
+                Qual o prazo de despacho dos produtos?
               </h3>
               <p className="text-gray-600">
-                O prazo de entrega varia conforme o produto e quantidade solicitada. 
-                Em geral, produtos em estoque são entregues em até 5 dias úteis, 
-                enquanto produtos sob encomenda podem levar de 15 a 30 dias úteis.
+                O prazo de despacho varia conforme o produto e quantidade solicitada. 
+                Em geral, produtos em estoque são despachados em até 5 dias úteis, 
+                enquanto itens especiais podem levar de 15 a 30 dias úteis.
               </p>
             </div>
 

@@ -53,6 +53,11 @@ export default function SobrePage() {
                   de qualidade e o reconhecimento de nossos clientes como parceiros 
                   confiáveis e inovadores.
                 </p>
+                <p>
+                  Hoje, com três unidades operacionais em Araquari-SC, atendemos clientes 
+                  em todo o território nacional, sempre mantendo nossos valores de excelência 
+                  e sustentabilidade.
+                </p>
               </div>
             </div>
             <div className="relative">
