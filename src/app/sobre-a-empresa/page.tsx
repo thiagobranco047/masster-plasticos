@@ -38,7 +38,7 @@ export default function SobrePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Nossa História</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Fundada em 2001, a Masster Plásticos nasceu com a missão de revolucionar 
+                  Fundada em 1999, a Masster Plásticos nasceu com a missão de revolucionar 
                   o mercado de plásticos no Brasil. Desde o início, nossa empresa se 
                   destacou pela inovação e compromisso com a qualidade.
                 </p>
