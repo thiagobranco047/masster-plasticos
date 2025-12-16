@@ -82,7 +82,7 @@ export default function Footer() {
                 <li><Link href="/produtos?categoria=Acessórios" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Acessórios</Link></li>
                 <li><Link href="/produtos?categoria=Caixas e Conduletes" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Caixas e Conduletes</Link></li>
                 <li><Link href="/produtos?categoria=Eletrodutos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eletrodutos</Link></li>
-                <li><Link href="/produtos?categoria=Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Modular</Link></li>
+                <li><Link href="/produtos?categoria=Linha Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Modular</Link></li>
                 <li><Link href="/produtos?categoria=Tampões" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampões</Link></li>
                 <li><Link href="/produtos?categoria=Tampas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Tampas</Link></li>
               </ul>
