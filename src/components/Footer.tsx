@@ -56,8 +56,8 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-4">Páginas</h4>
               <ul className="space-y-2">
                 <li><Link href="/" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Home</Link></li>
-                <li><Link href="/sobre" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Sobre</Link></li>
-                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linhas</Link></li>
+                <li><Link href="/sobre-a-empresa" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Sobre</Link></li>
+                <li><Link href="/linhas-de-produtos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linhas</Link></li>
                 <li><Link href="/produtos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Produtos</Link></li>
                 <li><Link href="/catalogo" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Catálogo</Link></li>
                 <li><Link href="/contato" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Contato</Link></li>
@@ -68,10 +68,10 @@ export default function Footer() {
             <div>
               <h4 className="text-sm font-semibold text-white mb-4">Linhas</h4>
               <ul className="space-y-2">
-                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</Link></li>
-                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Eco</Link></li>
+                <li><Link href="/produtos?linha=Masster Plus" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Plus</Link></li>
+                <li><Link href="/produtos?linha=Masster Eco" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Eco</Link></li>
                 <li><Link href="/masster-decor" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Masster Decor</Link></li>
-                <li><Link href="/linhas" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</Link></li>
+                <li><Link href="/produtos?linha=Classe A" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Classe A</Link></li>
               </ul>
             </div>
 
@@ -80,7 +80,6 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-4">Produtos</h4>
               <ul className="space-y-2">
                 <li><Link href="/produtos?categoria=Acessórios" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Acessórios</Link></li>
-                <li><Link href="/produtos?categoria=Condução" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Condução</Link></li>
                 <li><Link href="/produtos?categoria=Caixas e Conduletes" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Caixas e Conduletes</Link></li>
                 <li><Link href="/produtos?categoria=Eletrodutos" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Eletrodutos</Link></li>
                 <li><Link href="/produtos?categoria=Modular" className="text-gray-300 hover:text-brand-yellow transition-colors text-sm">Linha Modular</Link></li>

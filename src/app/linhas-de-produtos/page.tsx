@@ -49,7 +49,7 @@ export default function CategoriasPage() {
                 ? "/masster-decor"
                 : `/produtos?linha=${encodeURIComponent(
                     categoria.slug === "masster-plus"
-                      ? "MassterPlus"
+                      ? "Masster Plus"
                       : categoria.slug === "masster-eco"
                         ? "Masster Eco"
                         : categoria.slug === "classe-a"
@@ -58,11 +58,11 @@ export default function CategoriasPage() {
                   )}`;
               const imageSlug =
                 categoria.slug === "masster-eco"
-                  ? "masster-eco"
+                  ? "eco"
                   : categoria.slug === "masster-plus"
                     ? "masster-plus"
                     : categoria.slug === "masster-decor"
-                      ? "masster-decor"
+                      ? "decor"
                       : categoria.slug;
 
               return (
