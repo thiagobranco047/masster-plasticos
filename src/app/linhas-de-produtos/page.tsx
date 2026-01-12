@@ -5,8 +5,28 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Nossas Linhas",
-  description: "Conheça nossas principais linhas de produtos: Masster Plus, Masster Decor, Masster Eco e Classe A.",
+  title: "Nossas Linhas de Produtos | Masster Plásticos",
+  description: "Conheça nossas principais linhas de produtos: Masster Plus, Masster Decor, Masster Eco e Classe A. Eletrodutos PVC, acessórios, caixas e conduletes para instalações elétricas de alta qualidade.",
+  keywords: [
+    "linhas Masster Plásticos",
+    "Masster Plus",
+    "Masster Decor",
+    "Masster Eco",
+    "Classe A",
+    "eletrodutos PVC",
+    "acessórios elétricos",
+    "linhas de produtos plásticos",
+  ],
+  openGraph: {
+    title: "Nossas Linhas de Produtos | Masster Plásticos",
+    description: "Conheça nossas principais linhas de produtos: Masster Plus, Masster Decor, Masster Eco e Classe A.",
+    url: "https://www.massterplasticos.com.br/linhas-de-produtos",
+    siteName: "Masster Plásticos",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.massterplasticos.com.br/linhas-de-produtos",
+  },
 };
 
 export default function CategoriasPage() {

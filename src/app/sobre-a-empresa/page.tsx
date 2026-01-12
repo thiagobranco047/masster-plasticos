@@ -3,8 +3,36 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Sobre a Empresa",
-  description: "Conheça a história, missão e valores da Masster Plásticos, líder em soluções plásticas de alta qualidade.",
+  title: "Sobre a Empresa | Masster Plásticos",
+  description: "Conheça a história, missão e valores da Masster Plásticos. Fundada em 1999, somos líderes em soluções plásticas de alta qualidade com mais de 20 anos de experiência. Certificações ABNT NBR ISO/IEC 17025 e ABNT NBR 15465:2020.",
+  keywords: [
+    "Masster Plásticos",
+    "sobre Masster",
+    "história Masster Plásticos",
+    "empresa plásticos",
+    "certificações plásticos",
+    "qualidade plásticos",
+    "Araquari SC",
+    "indústria plásticos Brasil",
+  ],
+  openGraph: {
+    title: "Sobre a Empresa | Masster Plásticos",
+    description: "Conheça a história, missão e valores da Masster Plásticos. Mais de 20 anos de experiência em soluções plásticas de alta qualidade.",
+    url: "https://www.massterplasticos.com.br/sobre-a-empresa",
+    siteName: "Masster Plásticos",
+    images: [
+      {
+        url: "https://www.massterplasticos.com.br/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Masster Plásticos - Sobre a Empresa",
+      },
+    ],
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.massterplasticos.com.br/sobre-a-empresa",
+  },
 };
 
 export default function SobrePage() {

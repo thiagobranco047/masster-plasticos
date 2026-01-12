@@ -11,6 +11,7 @@ interface ProdutoImageClientProps {
 
 export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClientProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,6 +21,12 @@ export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClien
     setIsModalOpen(false);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const imageSrc = imageError ? "/og-image.png" : src;
+
   return (
     <>
       {/* Imagem do Produto */}
@@ -28,10 +35,11 @@ export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClien
         onClick={openModal}
       >
         <Image
-          src={src}
+          src={imageSrc}
           alt={alt}
           fill
           className="object-cover hover:scale-105 transition-transform duration-300"
+          onError={handleImageError}
         />
         {/* Overlay com ícone de zoom */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -75,12 +83,13 @@ export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClien
             {/* Imagem ampliada */}
             <div className="relative w-full h-full">
               <Image
-                src={src}
+                src={imageSrc}
                 alt={alt}
                 width={800}
                 height={600}
                 className="object-contain max-w-full max-h-[80vh] rounded-lg"
                 priority
+                onError={handleImageError}
               />
             </div>
             

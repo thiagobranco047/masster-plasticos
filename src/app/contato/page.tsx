@@ -3,8 +3,26 @@ import Footer from "@/components/Footer";
 import ContatoForm from "./ContatoForm";
 
 export const metadata = {
-  title: "Contato",
-  description: "Entre em contato com a Masster Plásticos. Estamos prontos para atender suas necessidades e fornecer soluções personalizadas.",
+  title: "Contato | Masster Plásticos",
+  description: "Entre em contato com a Masster Plásticos. Telefone: (47) 3424-0746 | Televendas: (47) 99785-0103. Endereço: Avenida das Industrias, 778 - Porto Grande, Araquari - SC. Estamos prontos para atender suas necessidades.",
+  keywords: [
+    "contato Masster Plásticos",
+    "telefone Masster",
+    "endereço Masster",
+    "orçamento eletrodutos",
+    "Araquari SC",
+    "contato indústria plásticos",
+  ],
+  openGraph: {
+    title: "Contato | Masster Plásticos",
+    description: "Entre em contato com a Masster Plásticos. Estamos prontos para atender suas necessidades e fornecer soluções personalizadas.",
+    url: "https://www.massterplasticos.com.br/contato",
+    siteName: "Masster Plásticos",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.massterplasticos.com.br/contato",
+  },
 };
 
 export default function ContatoPage() {
