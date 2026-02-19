@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: ProdutoPageProps) {
           alt: produto.nome,
         },
       ],
-      type: "product",
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",
