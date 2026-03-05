@@ -1166,7 +1166,7 @@ export const produtos: Produto[] = [
       {
         "bitola": "1/2\"",
         "codigo": {
-          "Preto": "44061002",
+          "Preto": "44041002",
           "Cinza": "46031002",
           "Cinza Claro": "77310002",
           "Branco Gelo": "47041002",
@@ -1176,7 +1176,7 @@ export const produtos: Produto[] = [
       {
         "bitola": "3/4\"",
         "codigo": {
-          "Preto": "44061004",
+          "Preto": "44041004",
           "Cinza": "46031004",
           "Cinza Claro": "77310004",
           "Branco Gelo": "47041004",
@@ -1186,7 +1186,7 @@ export const produtos: Produto[] = [
       {
         "bitola": "1\"",
         "codigo": {
-          "Preto": "44061006",
+          "Preto": "44041006",
           "Cinza": "46031006",
           "Cinza Claro": "77310006",
           "Branco Gelo": "47041006",
@@ -1220,11 +1220,11 @@ export const produtos: Produto[] = [
         "dimensoes": "96 × 45 × 50 mm",
         "compatibilidade": "1/2\", 3/4\", 1\"",
         "codigo": {
-          "Preto": "44401024",
-          "Cinza": "46401024",
+          "Preto": "44141024",
+          "Cinza": "46141024",
           "Cinza Claro": "77355024",
-          "Branco Gelo": "47101024",
-          "Vermelho": "48101024"
+          "Branco Gelo": "47141024",
+          "Vermelho": "48141024"
         },
         "embalagem": 20
       },
@@ -1234,11 +1234,11 @@ export const produtos: Produto[] = [
         "dimensoes": "96 × 45 × 50 mm",
         "compatibilidade": "1/2\", 3/4\", 1\"",
         "codigo": {
-          "Preto": "44421006",
-          "Cinza": "46421006",
-          "Cinza Claro": "77355006",
-          "Branco Gelo": "47121006",
-          "Vermelho": "48121006"
+          "Preto": "44101024",
+          "Cinza": "46101024",
+          "Cinza Claro": "77365024",
+          "Branco Gelo": "47101024",
+          "Vermelho": "48101024"
         },
         "embalagem": 12
       },
@@ -1248,11 +1248,11 @@ export const produtos: Produto[] = [
         "dimensoes": "117 × 51 × 60 mm",
         "compatibilidade": "1/2\", 3/4\", 1\"",
         "codigo": {
-          "Preto": "44421026",
-          "Cinza": "46421026",
-          "Cinza Claro": "77355026",
-          "Branco Gelo": "47121026",
-          "Vermelho": "48121026"
+          "Preto": "44121006",
+          "Cinza": "46121006",
+          "Cinza Claro": "77365006",
+          "Branco Gelo": "47121006",
+          "Vermelho": "48121006"
         },
         "embalagem": 12
       },
@@ -1365,22 +1365,22 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Pequena",
         "codigo": {
-          "Preto": "44564024",
-          "Cinza": "46564024",
+          "Preto": "44544024",
+          "Cinza": "46544024",
           "Cinza Claro": "77434024",
-          "Branco Gelo": "47564024",
-          "Vermelho": "48564024"
+          "Branco Gelo": "47544024",
+          "Vermelho": "48544024"
         },
         "embalagem": 20
       },
       {
         "compatibilidade": "Caixa Normal",
         "codigo": {
-          "Preto": "44764006",
-          "Cinza": "46764006",
+          "Preto": "44744006",
+          "Cinza": "46744006",
           "Cinza Claro": "77434006",
-          "Branco Gelo": "47764006",
-          "Vermelho": "48764006"
+          "Branco Gelo": "47744006",
+          "Vermelho": "48744006"
         },
         "embalagem": 12
       }
@@ -1403,11 +1403,11 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Pequena",
         "codigo": {
-          "Preto": "44564026",
-          "Cinza": "46564026",
+          "Preto": "44564024",
+          "Cinza": "46564024",
           "Cinza Claro": "77424026",
-          "Branco Gelo": "47564026",
-          "Vermelho": "48564026"
+          "Branco Gelo": "47564024",
+          "Vermelho": "48564024"
         },
         "embalagem": 20
       },
@@ -1516,8 +1516,8 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Pequena",
         "codigo": {
-          "Preto": "44564024",
-          "Cinza": "46564024",
+          "Preto": "44504024",
+          "Cinza": "46504024",
           "Cinza Claro": "77404024",
           "Branco Gelo": "47504024",
           "Vermelho": "48504024"
@@ -1527,10 +1527,10 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Normal",
         "codigo": {
-          "Preto": "44764006",
-          "Cinza": "46764006",
+          "Preto": "44704006",
+          "Cinza": "46704006",
           "Cinza Claro": "77404006",
-          "Branco Gelo": "47764006",
+          "Branco Gelo": "47704006",
           "Vermelho": "48704006"
         },
         "embalagem": 12
@@ -1557,8 +1557,8 @@ export const produtos: Produto[] = [
           "Preto": "44524024",
           "Cinza": "46524024",
           "Cinza Claro": "77454024",
-          "Branco Gelo": "47574024",
-          "Vermelho": "48574024"
+          "Branco Gelo": "47524024",
+          "Vermelho": "48524024"
         },
         "embalagem": 20
       },
@@ -1707,21 +1707,21 @@ export const produtos: Produto[] = [
         "compatibilidade": "Caixa Pequena",
         "codigo": {
           "Preto": "44684024",
-          "Cinza": "46594024",
+          "Cinza": "46514024",
           "Cinza Claro": "77504024",
-          "Branco Gelo": "47554024",
-          "Vermelho": "48554024"
+          "Branco Gelo": "47514024",
+          "Vermelho": "48514024"
         },
         "embalagem": 20
       },
       {
         "compatibilidade": "Caixa Normal",
         "codigo": {
-          "Preto": "44774006",
-          "Cinza": "46774006",
+          "Preto": "44714006",
+          "Cinza": "46714006",
           "Cinza Claro": "77504006",
-          "Branco Gelo": "47774006",
-          "Vermelho": "48774006"
+          "Branco Gelo": "47714006",
+          "Vermelho": "48714006"
         },
         "embalagem": 12
       }
@@ -1745,21 +1745,21 @@ export const produtos: Produto[] = [
         "compatibilidade": "Caixa Pequena",
         "codigo": {
           "Preto": "44574024",
-          "Cinza": "46574024",
+          "Cinza": "46594024",
           "Cinza Claro": "77424024",
-          "Branco Gelo": "47574024",
-          "Vermelho": "48574024"
+          "Branco Gelo": "47594024",
+          "Vermelho": "48594024"
         },
         "embalagem": 20
       },
       {
         "compatibilidade": "Caixa Normal",
         "codigo": {
-          "Preto": "44774006",
-          "Cinza": "46774006",
+          "Preto": "44794006",
+          "Cinza": "46794006",
           "Cinza Claro": "77464006",
-          "Branco Gelo": "47774006",
-          "Vermelho": "48774006"
+          "Branco Gelo": "47794006",
+          "Vermelho": "48794006"
         },
         "embalagem": 12
       }
@@ -1837,8 +1837,8 @@ export const produtos: Produto[] = [
         "dimensoes": "124,5 × 63 × 89,5 mm",
         "compatibilidade": ["1.1/4\"", "1.1/2\"", "2\"", "1/2\"", "3/4\"", "1\""],
         "codigo": {
-          "Preto": "46401008",
-          "Cinza": "46401010",
+          "Preto": "44141008",
+          "Cinza": "46141008",
           "Cinza Claro": "77355008",
           "Branco Gelo": "47141008",
           "Vermelho": "48141008"
@@ -1851,8 +1851,8 @@ export const produtos: Produto[] = [
         "dimensoes": "143,5 × 70 × 82,5 mm",
         "compatibilidade": ["1.1/4\"", "1.1/2\"", "2\"", "1/2\"", "3/4\"", "1\""],
         "codigo": {
-          "Preto": "46401010",
-          "Cinza": "46401012",
+          "Preto": "44141010",
+          "Cinza": "46141010",
           "Cinza Claro": "77355010",
           "Branco Gelo": "47141010",
           "Vermelho": "48141010"
@@ -1865,8 +1865,8 @@ export const produtos: Produto[] = [
         "dimensoes": "161 × 83 × 90 mm",
         "compatibilidade": ["2\"", "1.1/2\"", "1.1/4\"", "1\"", "3/4\"", "1/2\""],
         "codigo": {
-          "Preto": "46401012",
-          "Cinza": "46401012",
+          "Preto": "44141012",
+          "Cinza": "46141012",
           "Cinza Claro": "77355012",
           "Branco Gelo": "47141012",
           "Vermelho": "48141012"
@@ -1952,11 +1952,11 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Pequena",
         "codigo": {
-          "Preto": "44674024",
-          "Cinza": "46874024",
+          "Preto": "44874004",
+          "Cinza": "46874004",
           "Cinza Claro": "77604024",
-          "Branco Gelo": "47874024",
-          "Vermelho": "48874024"
+          "Branco Gelo": "47874004",
+          "Vermelho": "48874004"
         },
         "embalagem": 20
       }
@@ -1990,11 +1990,11 @@ export const produtos: Produto[] = [
       {
         "compatibilidade": "Caixa Pequena",
         "codigo": {
-          "Preto": "44984006",
-          "Cinza": "44984006",
+          "Preto": "44894004",
+          "Cinza": "46894004",
           "Cinza Claro": "77614024",
-          "Branco Gelo": "47904024",
-          "Vermelho": "48904024"
+          "Branco Gelo": "47894004",
+          "Vermelho": "48894004"
         },
         "embalagem": 20
       }
