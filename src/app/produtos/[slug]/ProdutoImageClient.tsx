@@ -7,9 +7,10 @@ interface ProdutoImageClientProps {
   src: string;
   alt: string;
   nome: string;
+  lancamento?: boolean;
 }
 
-export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClientProps) {
+export default function ProdutoImageClient({ src, alt, nome, lancamento }: ProdutoImageClientProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -61,6 +62,13 @@ export default function ProdutoImageClient({ src, alt, nome }: ProdutoImageClien
         </div>
         {/* Outline ao redor da imagem */}
         <div className="absolute inset-0 border-2 border-brand-yellow/30 rounded-2xl group-hover:border-brand-yellow transition-colors duration-300"></div>
+        {lancamento ? (
+          <div className="absolute top-3 right-3 z-10 pointer-events-none">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-bold uppercase tracking-wide bg-gradient-to-r from-amber-500 to-yellow-400 text-black shadow-md">
+              Lançamento
+            </span>
+          </div>
+        ) : null}
       </div>
 
       {/* Modal Fancybox */}

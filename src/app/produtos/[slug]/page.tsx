@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: ProdutoPageProps) {
       "eletrodutos PVC",
       produto.material || "PVC",
       ...(produto.cores_disponiveis || []),
+      ...(produto.lancamento ? ["lançamento", "novidade"] : []),
     ],
     openGraph: {
       title: `${produto.nome} | Masster Plásticos`,
@@ -175,8 +176,15 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
       >
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/20 text-brand-yellow mb-4">
-              {produto.linha} - {produto.categoria}
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/20 text-brand-yellow">
+                {produto.linha} - {produto.categoria}
+              </div>
+              {produto.lancamento ? (
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-gradient-to-r from-amber-500 to-yellow-400 text-black">
+                  Lançamento
+                </span>
+              ) : null}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {produto.nome}
@@ -208,8 +216,15 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Informações do Produto */}
             <div>
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/10 text-brand-yellow mb-4">
-                {produto.linha} - {produto.categoria}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-yellow/10 text-brand-yellow">
+                  {produto.linha} - {produto.categoria}
+                </div>
+                {produto.lancamento ? (
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-gradient-to-r from-amber-500 to-yellow-400 text-black">
+                    Lançamento
+                  </span>
+                ) : null}
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {produto.nome}
@@ -249,6 +264,7 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
                 src={produto.imagem || "/og-image.png"}
                 alt={produto.nome || "Produto"}
                 nome={produto.nome || "Produto"}
+                lancamento={produto.lancamento}
               />
             </div>
           </div>

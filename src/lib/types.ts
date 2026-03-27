@@ -48,6 +48,8 @@ export type Produto = {
   material: string;
   imagem: string;
   pdf_ficha_tecnica?: string;
+  /** Produto em lançamento (exibe selo no site) */
+  lancamento?: boolean;
   variantes?: Variante[];
   // Campos legados para compatibilidade
   cores?: string[];

@@ -188,10 +188,15 @@ function ProdutosContent() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 right-4 flex flex-wrap items-start justify-between gap-2">
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-yellow/90 text-black">
                       {produto.linha} - {produto.categoria}
                     </span>
+                    {produto.lancamento ? (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-gradient-to-r from-amber-500 to-yellow-400 text-black shadow-sm">
+                        Lançamento
+                      </span>
+                    ) : null}
                   </div>
                   </div>
                   <div className="p-6">

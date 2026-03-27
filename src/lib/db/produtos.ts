@@ -202,6 +202,39 @@ export const produtos: Produto[] = [
     "imagem": "/images/linhas/linha-classe-a/curva-longa-90-lisa.webp",
     "pdf_ficha_tecnica": "/pdfs/curva-longa-90-lisa-classe-a.pdf"
   },
+  {
+    "id": "A008",
+    "nome": "Luva Classe A (fabricada a partir do eletroduto)",
+    "slug": "luva-classe-a-fabricada-a-partir-do-eletroduto",
+    "categoria": "Acessórios",
+    "linha": "Classe A",
+    "lancamento": true,
+    "descricao": "Lançamento: luva lisa em PVC Classe A fabricada a partir do eletroduto, para união de tubulações elétricas industriais com alta resistência mecânica. Produto novo da linha Classe A, distinto da luva com divisória.",
+    "aplicacao": "Indicada para conexão de eletrodutos ponta lisa em instalações que exigem robustez e padronização com a linha de eletroduto Classe A.",
+    "cores_disponiveis": ["Cinza Munsell"],
+    "bitolas": [
+      { "bitola": "3/4\"", "codigo": { "Cinza Munsell": "25051004" } },
+      { "bitola": "1\"", "codigo": { "Cinza Munsell": "25051006" } },
+      { "bitola": "1.1/2\"", "codigo": { "Cinza Munsell": "25051010" } },
+      { "bitola": "2\"", "codigo": { "Cinza Munsell": "25051012" } },
+      { "bitola": "2.1/2\"", "codigo": { "Cinza Munsell": "25051014" } },
+      { "bitola": "3\"", "codigo": { "Cinza Munsell": "25051016" } },
+      { "bitola": "4\"", "codigo": { "Cinza Munsell": "25051018" } }
+    ],
+    "embalagem": {
+      "3/4\"": 50,
+      "1\"": 50,
+      "1.1/2\"": 20,
+      "2\"": 15,
+      "2.1/2\"": 5,
+      "3\"": 5,
+      "4\"": 1
+    },
+    "norma": "ABNT NBR 15465:2020",
+    "material": "PVC Classe A",
+    "imagem": "/images/linhas/linha-classe-a/luva-classe-a-fabricada-a-partir-do-eletroduto.webp",
+    "pdf_ficha_tecnica": "/pdfs/luva-classe-a-fabricada-a-partir-do-eletroduto.pdf"
+  },
 
   // LINHA MASSTER ECO
   {
