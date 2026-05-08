@@ -1130,7 +1130,7 @@ export const produtos: Produto[] = [
     "slug": "tampao-masster-plus",
     "categoria": "Tampões",
     "linha": "Masster Plus",
-    "descricao": "Tampão de acabamento produzido em PVC virgem para fechamento de eletrodutos aparentes.",
+    "descricao": "Tampão de acabamento produzido em PVC virgem para fechamento de conduletes.",
     "aplicacao": "Utilizado para finalizar instalações aparentes sem continuidade de tubulação.",
     "cores_disponiveis": ["Preto", "Cinza", "Cinza Claro", "Branco Gelo", "Vermelho"],
     "bitolas": [
