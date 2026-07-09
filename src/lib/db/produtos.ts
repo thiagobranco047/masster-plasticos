@@ -1289,20 +1289,20 @@ export const produtos: Produto[] = [
         },
         "embalagem": 12
       },
-      {
-        "entradas": 5,
-        "tamanho": "Caixa Normal",
-        "dimensoes": "117 × 51 × 60 mm",
-        "compatibilidade": "1/2\", 3/4\", 1\"",
-        "codigo": {
-          "Preto": "44401026",
-          "Cinza": "46401026",
-          "Cinza Claro": "77355026",
-          "Branco Gelo": "47101026",
-          "Vermelho": "48101026"
-        },
-        "embalagem": 20
-      }
+      // {
+      //   "entradas": 5,
+      //   "tamanho": "Caixa Normal",
+      //   "dimensoes": "117 × 51 × 60 mm",
+      //   "compatibilidade": "1/2\", 3/4\", 1\"",
+      //   "codigo": {
+      //     "Preto": "44401026",
+      //     "Cinza": "46401026",
+      //     "Cinza Claro": "77355026",
+      //     "Branco Gelo": "47101026",
+      //     "Vermelho": "48101026"
+      //   },
+      //   "embalagem": 20
+      // }
     ],
     "norma": "ABNT NBR 15465:2020",
     "material": "PVC virgem",
