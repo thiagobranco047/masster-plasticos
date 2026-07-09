@@ -42,7 +42,7 @@ export default function MassterDecorSection() {
           </div>
         </div>
 
-        <div className="w-screen left-1/2 -translate-x-1/2 relative px-4 sm:px-10">
+        <div className="relative w-full px-4 sm:px-10">
           <div className="relative overflow-hidden rounded-3xl bg-white">
             <div className="marquee-track flex items-center h-full">
               {marqueeImages.map((image, index) => (

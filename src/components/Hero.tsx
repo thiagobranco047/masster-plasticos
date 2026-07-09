@@ -64,29 +64,29 @@ export default function Hero() {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="h-full flex items-center justify-center text-white">
-                <div className="max-w-[50%] mx-auto w-full">
+                <div className="mx-auto w-full max-w-6xl">
                   {slide.image ? (
-                    <div className="flex items-center gap-8 h-full">
-                      <div className="flex-shrink-0 w-1/3 h-full flex items-center">
+                    <div className="grid items-center gap-6 md:gap-10 lg:gap-14 md:grid-cols-12">
+                      <div className="md:col-span-5 flex items-center justify-center">
                         <Image
                           src={slide.image}
                           alt={slide.title}
                           width={600}
                           height={1200}
-                          className="w-full h-full object-contain"
+                          className="h-[260px] w-auto sm:h-[340px] md:h-[500px] lg:h-[580px] object-contain"
                           priority={index === 1}
                         />
                       </div>
-                      <div className="flex-1 text-left">
+                      <div className="md:col-span-7 text-left">
                         <div className="flex justify-start">
                           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-sm">
                             <span>{slide.badge}</span>
                           </div>
                         </div>
-                        <h1 className="mt-6 text-3xl md:text-6xl font-bold tracking-tight">
+                        <h1 className="mt-6 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                           {slide.title}
                         </h1>
-                        <p className="mt-4 text-white/80 max-w-2xl">
+                        <p className="mt-4 text-white/80 max-w-2xl text-base md:text-lg">
                           {slide.description}
                         </p>
                         <div className="mt-8 flex items-center gap-3 flex-wrap">
@@ -99,16 +99,16 @@ export default function Hero() {
                       </div>
                     </div>
                   ) : (
-                    <div className="text-center">
+                    <div className="text-center max-w-4xl mx-auto">
                       <div className="flex justify-center">
                         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-sm">
                           <span>{slide.badge}</span>
                         </div>
                       </div>
-                      <h1 className="mt-6 text-3xl md:text-6xl font-bold tracking-tight">
+                      <h1 className="mt-6 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                         {slide.title}
                       </h1>
-                      <p className="mt-4 text-white/80 max-w-2xl mx-auto">
+                      <p className="mt-4 text-white/80 max-w-3xl mx-auto text-base md:text-lg">
                         {slide.description}
                       </p>
                       <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
